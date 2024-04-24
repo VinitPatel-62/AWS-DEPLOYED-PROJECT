@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.2
+  build:
+    commands:
+      - composer self-update
+      # Add any other build commands specific to your PHP project
+  post_build:
+    commands:
+      - echo Build completed
+artifacts:
+  files:
+    - /path/to/your/php/files//*.php
+    # Adjust the path above to match your PHP file structure
+    # You can include any other necessary files such as config files, templates, etc.
+    # Remember to adjust the path accordingly
+    - scripts/*.sh
+    - appspec.yml
+  discard-paths: yes
